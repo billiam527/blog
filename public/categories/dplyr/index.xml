@@ -18,8 +18,8 @@
       
       <guid>https://billsbestblog.netlify.com/post/data-visualization/</guid>
       <description>Today we are going to go over some basic data visualization techniques using the Lahman dataset, dplyr, ggplot2, and ggiraph. Our goal will be to create a scatter plot that shows elite homerun hitters (that we will define as &amp;gt;= 400 career homeruns) and a comparison of there strikeouts.
-First, we must filter and summarize hitters that were able to hit 400 homeruns in their careers.
-This gives us a list of players who were able to hit 400 or more homeruns.</description>
+Let’s start by loading the necessary packages.
+library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Now, we must filter and summarize hitters that were able to hit 400 homeruns in their careers.</description>
     </item>
     
   </channel>
