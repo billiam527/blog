@@ -1,6 +1,6 @@
-baseurl = "http://hugo.spf13.com/"
+baseurl = "https://billsbestblog.netlify.com"
 languageCode = "en-us"
-title = "Hugo Future Imperfect"
+title = "Bill's Data Science Blog"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
@@ -55,9 +55,9 @@ pluralizeListTitles = false
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
 [params.intro]
-    header    = "Hugo Future Imperfect"
+    header    = "Bill's Data Science Blog"
 
-    paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
+    paragraph = "A blog about various data science topics, including, R, R markdown, dplyr, ggiraph, ggplot and much more!"
 
     about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
 
@@ -121,31 +121,4 @@ pluralizeListTitles = false
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
 # The social media icons will appear on the sidebar
 [social]
-    github          = "jpescador"
-    bitbucket       = ""
-    jsfiddle        = ""
-    codepen         = ""
-    foursquare      = ""
-    dribbble        = ""
-    deviantart      = ""
-    behance         = ""
-    flickr          = ""
-    instagram       = ""
-    youtube         = ""
-    vimeo           = ""
-    vine            = ""
-    medium          = ""
-    wordpress       = ""
-    tumblr          = ""
-    xing            = ""
-    linkedin        = ""
-    slideshare      = ""
-    stackoverflow   = ""
-    reddit          = ""
-    pinterest       = ""
-    googleplus      = ""
-    facebook        = ""
-    facebook_admin  = ""
-    twitter_domain  = ""
-    twitter         = "julio_pescador"
-    email           = ""
+    github          = "billiam527"
