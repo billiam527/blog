@@ -1,0 +1,30 @@
+---
+title: data visualization using a histogram
+author: Bill Fisher
+date: '2017-09-25'
+slug: data-visualization-using-a-histogram
+categories:
+  - ggiraph
+  - ggplot
+  - Lahman
+tags:
+  - data sceince
+---
+
+
+
+<p>Let us say we wanted to graph the weight of all baseball players to ever play. A nice display of this information could be in a histogram.</p>
+<p>First, we need to install the necessary packages and call them in using “library()”.</p>
+<pre class="r"><code>library(Lahman)
+library(dplyr)
+library(ggiraph)
+library(ggplot2)</code></pre>
+<p>Next, we can use our select function to select the players’s weights, in the “Master” table. We can also make sure that we exclude any players that we do not have data available for.</p>
+<pre class="r"><code>df&lt;-Master%&gt;%
+  filter(!is.na(weight))%&gt;%
+  select(weight)</code></pre>
+<p>Now, we can graph this information using ggplot and ggiraph. To make our histogram more appealing we will set the outside color of our bars to white and fill them with blue. Make sure to use geom_histogram to make a histogram and use data = df since that is what we already named our table. You can also pick a precise number of bars for the histogram using “bins”. For our example, we will use 25.</p>
+<pre class="r"><code>ggplot()+
+  geom_histogram(data=df,aes(x=weight),color=&quot;white&quot;,fill=&quot;blue&quot;,bins=25)+
+  ggtitle(&quot;Baseball Player Weights&quot;)</code></pre>
+<p><img src="/post/2017-09-25-data-visualization-using-a-histogram_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
