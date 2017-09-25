@@ -11,7 +11,7 @@ tags:
   - data sceince
 ---
 
-<!-- Today we are going to go over some basic data visualization techniques using the Lahman dataset, dplyr, ggplot2, and ggiraph.  Our goal will be to create a scatter plot that shows elite homerun hitters (that we will define as >= 400 career homeruns) and a comparison of there strikeouts.
+Today we are going to go over some basic data visualization techniques using the Lahman dataset, dplyr, ggplot2, and ggiraph.  Our goal will be to create a scatter plot that shows elite homerun hitters (that we will define as >= 400 career homeruns) and a comparison of there strikeouts.
 
 First, we must filter and summarize hitters that were able to hit 400 homeruns in their careers.
 
@@ -23,4 +23,4 @@ We have named our new table HR_vs_SO.
 
 Using ggplot and ggiraph now, we will graph the players homeruns and strikeouts.
 
-Now, we have a nice graph that shows the relationship between the players and their homeruns and strikeouts. -->
+Now, we have a nice graph that shows the relationship between the players and their homeruns and strikeouts.
