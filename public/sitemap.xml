@@ -3,26 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://billsbestblog.netlify.com/itemized/item1/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/itemized/item2/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/itemized/item3/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/itemized/item4/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billsbestblog.netlify.com/blog/2015-07-23-r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
@@ -30,11 +10,6 @@
   <url>
     <loc>https://billsbestblog.netlify.com/blog/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -53,14 +28,12 @@
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/categories/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://billsbestblog.netlify.com/about/</loc>
   </url>
   
   <url>
     <loc>https://billsbestblog.netlify.com/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -72,12 +45,7 @@
   
   <url>
     <loc>https://billsbestblog.netlify.com/categories/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/contact/</loc>
   </url>
   
   <url>
@@ -89,12 +57,6 @@
   <url>
     <loc>https://billsbestblog.netlify.com/categories/hugo/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/itemized/</loc>
-    <lastmod>2017-06-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
