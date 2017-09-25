@@ -1,0 +1,21 @@
+---
+title: data visualization using a bar chart
+author: Bill Fisher
+date: '2017-09-25'
+slug: data-visualization-using-a-bar-chart
+categories:
+  - bar chart
+  - ggiraph
+  - ggplot
+  - Lahman
+  - dplyr
+tags:
+  - data sceince
+---
+
+
+
+<p>library(Lahman) library(dplyr) library(ggiraph) library(ggplot2)</p>
+<p>df&lt;-Teams%&gt;% filter(yearID==1980)%&gt;% select(name,HR)%&gt;% arrange(HR)</p>
+<p>df<span class="math inline">\(name&lt;-factor(df\)</span>name,levels=df$name)</p>
+<p>ggplot()+ geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue”, fill=“white”)+ coord_flip()</p>

@@ -2,47 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Bill&#39;s Data Science Blog</title>
-    <link>/categories/</link>
+    <link>https://billsbestblog.netlify.com/categories/</link>
     <description>Recent content in Categories on Bill&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://billsbestblog.netlify.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Dplyr</title>
-      <link>/categories/dplyr/</link>
+      <title>Bar chart</title>
+      <link>https://billsbestblog.netlify.com/categories/bar-chart/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/dplyr/</guid>
+      <guid>https://billsbestblog.netlify.com/categories/bar-chart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dplyr</title>
+      <link>https://billsbestblog.netlify.com/categories/dplyr/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/categories/dplyr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggiraph</title>
-      <link>/categories/ggiraph/</link>
+      <link>https://billsbestblog.netlify.com/categories/ggiraph/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ggiraph/</guid>
+      <guid>https://billsbestblog.netlify.com/categories/ggiraph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggplot</title>
-      <link>/categories/ggplot/</link>
+      <link>https://billsbestblog.netlify.com/categories/ggplot/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ggplot/</guid>
+      <guid>https://billsbestblog.netlify.com/categories/ggplot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lahman</title>
-      <link>/categories/lahman/</link>
+      <link>https://billsbestblog.netlify.com/categories/lahman/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/lahman/</guid>
+      <guid>https://billsbestblog.netlify.com/categories/lahman/</guid>
       <description></description>
     </item>
     

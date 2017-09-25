@@ -1,19 +1,11 @@
-
-
-
-    
-        
-    
-
-
-
-
 <!DOCTYPE HTML>
 
 <html>
     <head>
         
-            <title>Ggplot Posts - Bill&#39;s Data Science Blog</title>
+            
+                <title>data visualization using a bar chart</title>
+            
         
 
         <meta charset="utf-8" />
@@ -23,21 +15,31 @@
 
 
         
+            <meta name="author" content="Bill Fisher">
+        
         
             
         
 
-        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ggplot"/>
-<meta name="twitter:description" content=""/>
+        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="data visualization using a bar chart"/>
+<meta name="twitter:description" content="library(Lahman) library(dplyr) library(ggiraph) library(ggplot2)
+df&lt;-Teams%&gt;% filter(yearID==1980)%&gt;% select(name,HR)%&gt;% arrange(HR)
+df\(name&lt;-factor(df\)name,levels=df$name)
+ggplot()&#43; geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue”, fill=“white”)&#43; coord_flip()"/>
 
-        <meta property="og:title" content="Ggplot" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://billsbestblog.netlify.com/categories/ggplot/" />
+        <meta property="og:title" content="data visualization using a bar chart" />
+<meta property="og:description" content="library(Lahman) library(dplyr) library(ggiraph) library(ggplot2)
+df&lt;-Teams%&gt;% filter(yearID==1980)%&gt;% select(name,HR)%&gt;% arrange(HR)
+df\(name&lt;-factor(df\)name,levels=df$name)
+ggplot()&#43; geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue”, fill=“white”)&#43; coord_flip()" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/" />
 
 
 
-<meta property="og:updated_time" content="2017-09-25T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2017-09-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-09-25T00:00:00&#43;00:00"/>
+
 
 
 
@@ -49,9 +51,19 @@
 
 
         
-<meta itemprop="name" content="Ggplot">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="data visualization using a bar chart">
+<meta itemprop="description" content="library(Lahman) library(dplyr) library(ggiraph) library(ggplot2)
+df&lt;-Teams%&gt;% filter(yearID==1980)%&gt;% select(name,HR)%&gt;% arrange(HR)
+df\(name&lt;-factor(df\)name,levels=df$name)
+ggplot()&#43; geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue”, fill=“white”)&#43; coord_flip()">
 
+
+<meta itemprop="dateModified" content="2017-09-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="15">
+
+
+
+<meta itemprop="keywords" content="data sceince," />
 
         
 
@@ -81,10 +93,11 @@
       <div id="wrapper">
 
     
+    
 <header id="header">
     
       
-          <h1><a href="/"></a></h1>
+          <h1><a href="/">post</a></h1>
       
     
 
@@ -113,6 +126,10 @@
     </nav>
     <nav class="main">
         <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
             
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -196,85 +213,70 @@
         
 </section>
 
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-bar-chart%2f&text=data%20visualization%20using%20a%20bar%20chart&via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-bar-chart%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-bar-chart%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-bar-chart%2f&title=data%20visualization%20using%20a%20bar%20chart" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-bar-chart%2f&title=data%20visualization%20using%20a%20bar%20chart" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-bar-chart%2f&title=data%20visualization%20using%20a%20bar%20chart" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Bill%20Fisher&body=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-bar-chart%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
     
     <div id="main">
-        <h1>Ggplot</h1>
         
         
-            <article class="post">
+        <article class="post">
     <header>
     <div class="title">
         
-            <h2><a href="https://billsbestblog.netlify.com/post/data-visualization/">Data Visualization</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-09-25'>
-            September 25, 2017</time>
-        <span class="author">Bill</span>
-        
-            <p>3 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>Today we are going to go over some basic data visualization techniques using the Lahman dataset, dplyr, ggplot2, and ggiraph. Our goal will be to create a scatter plot that shows elite homerun hitters (that we will define as &gt;= 400 career homeruns) and a comparison of there strikeouts.
-Let’s start by loading the necessary packages.
-library(Lahman)
-library(dplyr)
-library(ggiraph)
-library(ggplot2)
-Now, we must filter and summarize hitters that were able to hit 400 homeruns in their careers.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://billsbestblog.netlify.com/post/data-visualization/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/dplyr'>dplyr</a></li>
-    
-        <li><a href='/categories/ggiraph'>ggiraph</a></li>
-    
-        <li><a href='/categories/ggplot'>ggplot</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">data visualization using a bar chart</a></h2>
+            <h1><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">data visualization using a bar chart</a></h1>
+            
         
         
     </div>
@@ -292,17 +294,20 @@ Now, we must filter and summarize hitters that were able to hit 400 homeruns in 
     </div>
 </header>
 
+
     
 
-    <p>library(Lahman) library(dplyr) library(ggiraph) library(ggplot2)
-df&lt;-Teams%&gt;% filter(yearID==1980)%&gt;% select(name,HR)%&gt;% arrange(HR)
-df(name&lt;-factor(df)name,levels=df$name)
-ggplot()+ geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue”, fill=“white”)+ coord_flip()</p>
+    
+
+    <div id="content">
+        <p>library(Lahman) library(dplyr) library(ggiraph) library(ggplot2)</p>
+<p>df&lt;-Teams%&gt;% filter(yearID==1980)%&gt;% select(name,HR)%&gt;% arrange(HR)</p>
+<p>df<span class="math inline">\(name&lt;-factor(df\)</span>name,levels=df$name)</p>
+<p>ggplot()+ geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue”, fill=“white”)+ coord_flip()</p>
+
+    </div>
 
     <footer>
-        <ul class="actions">
-            <li><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/" class="button big">Continue Reading</a></li>
-        </ul>
         <ul class="stats">
     
         
@@ -338,88 +343,46 @@ ggplot()+ geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue�
 
     </footer>
 </article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-histogram/">data visualization using a histogram</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-09-25'>
-            September 25, 2017</time>
-        <span class="author">Bill Fisher</span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>Let us say we wanted to graph the weight of all baseball players to ever play. A nice display of this information could be in a histogram.
-First, we need to install the necessary packages and call them in using “library()”.
-library(Lahman)
-library(dplyr)
-library(ggiraph)
-library(ggplot2)
-Next, we can use our select function to select the players’s weights, in the “Master” table. We can also make sure that we exclude any players that we do not have data available for.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-histogram/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-        
-
-        
-        
-            <li>
-                
-                
-                    
-
-                    
-                        Categories
-                    
-                
-            </li>
-        
-    
-
-    
-    
-        <li><a href='/categories/ggiraph'>ggiraph</a></li>
-    
-        <li><a href='/categories/ggplot'>ggplot</a></li>
-    
-        <li><a href='/categories/lahman'>Lahman</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-
-        
 <ul class="actions pagination">
     
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+        <li><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-histogram/"
+                class="button big previous">data visualization using a histogram</a></li>
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
+        <li><a href="https://billsbestblog.netlify.com/post/data-visualization/"
+                class="button big next">Data Visualization</a></li>
     
 </ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
 
     </div>
     
@@ -440,9 +403,6 @@ Next, we can use our select function to select the players’s weights, in the �
                 </header>
             
             <ul class="icons">
-                
-                    <li><a href="https://billsbestblog.netlify.com/categories/ggplot/index.xml" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
                     
@@ -625,9 +585,6 @@ Next, we can use our select function to select the players’s weights, in the �
     
         <section id="footer">
             <ul class="icons">
-                
-                    <li><a href="https://billsbestblog.netlify.com/categories/ggplot/index.xml" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
                     
