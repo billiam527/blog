@@ -34,7 +34,7 @@ pluralizeListTitles = false
     faviconVersion       = ""
 
     # Disable showing the social sharing links on blog posts
-    socialShareDisabled = false
+    socialShareDisabled = true
 
     # Load custom CSS or JavaScript files. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
@@ -58,8 +58,6 @@ pluralizeListTitles = false
     header    = "Bill's Data Science Blog"
 
     paragraph = "A blog about various data science topics, including, R, R markdown, dplyr, ggiraph, ggplot and much more!"
-
-    about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
 
 # This will also appear on the sidebar.
 # A width of less than 100px is recommended
@@ -98,24 +96,6 @@ pluralizeListTitles = false
     url = "/blog/"
     identifier = "fa fa-newspaper-o"
     weight = 3
-
-[[menu.main]]
-    name = "Itemized"
-    url = "/itemized/"
-    identifier = "fa fa-list"
-    weight = 4
-
-[[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    identifier = "fa fa-sitemap"
-    weight = 5
-
-[[menu.main]]
-    name = "Contact"
-    url = "/contact/"
-    identifier = "fa fa-envelope-o"
-    weight = 6
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
