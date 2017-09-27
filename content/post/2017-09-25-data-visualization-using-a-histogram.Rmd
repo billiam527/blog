@@ -1,5 +1,5 @@
 ---
-title: data visualization using a histogram
+title: Data Visualization Using a Histogram
 author: Bill Fisher
 date: '2017-09-25'
 slug: data-visualization-using-a-histogram

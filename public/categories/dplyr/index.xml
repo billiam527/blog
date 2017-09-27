@@ -12,26 +12,25 @@
     
     
     <item>
-      <title>Data Visualization</title>
-      <link>https://billsbestblog.netlify.com/post/data-visualization/</link>
-      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://billsbestblog.netlify.com/post/data-visualization/</guid>
-      <description>Today we are going to go over some basic data visualization techniques using the Lahman dataset, dplyr, ggplot2, and ggiraph. Our goal will be to create a scatter plot that shows elite homerun hitters (that we will define as &amp;gt;= 400 career homeruns) and a comparison of there strikeouts.
-Let’s start by loading the necessary packages.
-library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Now, we must filter and summarize hitters that were able to hit 400 homeruns in their careers.</description>
-    </item>
-    
-    <item>
-      <title>data visualization using a bar chart</title>
+      <title>Data Visualization Using a Bar Chart</title>
       <link>https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/</guid>
-      <description>library(Lahman) library(dplyr) library(ggiraph) library(ggplot2)
-df&amp;lt;-Teams%&amp;gt;% filter(yearID==1980)%&amp;gt;% select(name,HR)%&amp;gt;% arrange(HR)
-df\(name&amp;lt;-factor(df\)name,levels=df$name)
-ggplot()+ geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue”, fill=“white”)+ coord_flip()</description>
+      <description>Let’s graph homeruns from the year 1980.
+First, we need to bring in our downloaded pacakges using the library feature.
+library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we need to extract the data we want to display from Lahman. During this step, we will also arrange our data ahead of time so that when we finally put our bar chart together, the homeruns will display from most to least.</description>
+    </item>
+    
+    <item>
+      <title>Data Visualization Using a Scatter Plot</title>
+      <link>https://billsbestblog.netlify.com/post/data-visualization-using-a-scatter-plot/</link>
+      <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/post/data-visualization-using-a-scatter-plot/</guid>
+      <description>Today we are going to go over some basic data visualization techniques using the Lahman dataset, dplyr, ggplot2, and ggiraph. Our goal will be to create a scatter plot that shows elite homerun hitters (that we will define as &amp;gt;= 400 career homeruns) and a comparison of there strikeouts.
+Let’s start by loading the necessary packages.
+library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Now, we must filter and summarize hitters that were able to hit 400 homeruns in their careers.</description>
     </item>
     
   </channel>

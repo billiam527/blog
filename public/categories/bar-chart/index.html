@@ -18,7 +18,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.28" />
+        <meta name="generator" content="Hugo 0.29" />
         
 
 
@@ -182,11 +182,11 @@
 
                 
                     <li>
-                        <a href="https://billsbestblog.netlify.com/post/data-visualization/"><p>Data Visualization</p></a>
+                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/"><p>Data Visualization Using a Bar Chart</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/"><p>data visualization using a bar chart</p></a>
+                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-histogram/"><p>Data Visualization Using a Histogram</p></a>
                     </li>
                 
             </ul>
@@ -205,7 +205,7 @@
     <header>
     <div class="title">
         
-            <h2><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">data visualization using a bar chart</a></h2>
+            <h2><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">Data Visualization Using a Bar Chart</a></h2>
         
         
     </div>
@@ -217,7 +217,7 @@
             September 25, 2017</time>
         <span class="author">Bill Fisher</span>
         
-            <p>1 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -225,10 +225,13 @@
 
     
 
-    <p>library(Lahman) library(dplyr) library(ggiraph) library(ggplot2)
-df&lt;-Teams%&gt;% filter(yearID==1980)%&gt;% select(name,HR)%&gt;% arrange(HR)
-df(name&lt;-factor(df)name,levels=df$name)
-ggplot()+ geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue”, fill=“white”)+ coord_flip()</p>
+    <p>Let’s graph homeruns from the year 1980.
+First, we need to bring in our downloaded pacakges using the library feature.
+library(Lahman)
+library(dplyr)
+library(ggiraph)
+library(ggplot2)
+Next, we need to extract the data we want to display from Lahman. During this step, we will also arrange our data ahead of time so that when we finally put our bar chart together, the homeruns will display from most to least.</p>
 
     <footer>
         <ul class="actions">
@@ -381,7 +384,7 @@ ggplot()+ geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue�
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization/">Data Visualization</a></h3>
+                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">Data Visualization Using a Bar Chart</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2017-09-25'>
@@ -393,7 +396,7 @@ ggplot()+ geom_bar(data=df,aes(x=name, y=HR),stat=“identity”, color=“blue�
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">data visualization using a bar chart</a></h3>
+                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-histogram/">Data Visualization Using a Histogram</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2017-09-25'>

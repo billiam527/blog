@@ -1,8 +1,8 @@
 ---
-title: Data Visualization
+title: Data Visualization Using a Scatter Plot
 author: Bill
 date: '2017-09-25'
-slug: data-visualization
+slug: data-visualization-using-a-scatter-plot
 categories:
   - dplyr
   - ggiraph
