@@ -1,0 +1,758 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Data Visualization Using a Time Series</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.29" />
+        
+
+
+        
+            <meta name="author" content="Bill Fisher">
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Data Visualization Using a Time Series"/>
+<meta name="twitter:description" content="Today we will go over how to use a time series. We will show Babe Ruth’s homerun progression throughout his playing career. First, we must install the necessary packages and load them with “library()”.
+library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we need to extract our necessary data from “Lahman”. We will do this with the following code:
+Batting%&gt;%filter(playerID==&quot;ruthba01&quot;)%&gt;%select(yearID, HR)## yearID HR## 1 1914 0## 2 1915 4## 3 1916 3## 4 1917 2## 5 1918 11## 6 1919 29## 7 1920 54## 8 1921 59## 9 1922 35## 10 1923 41## 11 1924 46## 12 1925 25## 13 1926 47## 14 1927 60## 15 1928 54## 16 1929 46## 17 1930 49## 18 1931 46## 19 1932 41## 20 1933 34## 21 1934 22## 22 1935 6We can then call this dataframe “df” to make it easy to call upon moving forward."/>
+
+        <meta property="og:title" content="Data Visualization Using a Time Series" />
+<meta property="og:description" content="Today we will go over how to use a time series. We will show Babe Ruth’s homerun progression throughout his playing career. First, we must install the necessary packages and load them with “library()”.
+library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we need to extract our necessary data from “Lahman”. We will do this with the following code:
+Batting%&gt;%filter(playerID==&quot;ruthba01&quot;)%&gt;%select(yearID, HR)## yearID HR## 1 1914 0## 2 1915 4## 3 1916 3## 4 1917 2## 5 1918 11## 6 1919 29## 7 1920 54## 8 1921 59## 9 1922 35## 10 1923 41## 11 1924 46## 12 1925 25## 13 1926 47## 14 1927 60## 15 1928 54## 16 1929 46## 17 1930 49## 18 1931 46## 19 1932 41## 20 1933 34## 21 1934 22## 22 1935 6We can then call this dataframe “df” to make it easy to call upon moving forward." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/" />
+
+
+
+<meta property="article:published_time" content="2017-09-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-09-27T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Data Visualization Using a Time Series">
+<meta itemprop="description" content="Today we will go over how to use a time series. We will show Babe Ruth’s homerun progression throughout his playing career. First, we must install the necessary packages and load them with “library()”.
+library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we need to extract our necessary data from “Lahman”. We will do this with the following code:
+Batting%&gt;%filter(playerID==&quot;ruthba01&quot;)%&gt;%select(yearID, HR)## yearID HR## 1 1914 0## 2 1915 4## 3 1916 3## 4 1917 2## 5 1918 11## 6 1919 29## 7 1920 54## 8 1921 59## 9 1922 35## 10 1923 41## 11 1924 46## 12 1925 25## 13 1926 47## 14 1927 60## 15 1928 54## 16 1929 46## 17 1930 49## 18 1931 46## 19 1932 41## 20 1933 34## 21 1934 22## 22 1935 6We can then call this dataframe “df” to make it easy to call upon moving forward.">
+
+
+<meta itemprop="dateModified" content="2017-09-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="474">
+
+
+
+<meta itemprop="keywords" content="ggplot,ggiraph,line chart,time series,baseball,Lahman," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+        
+
+        
+
+        
+            
+        
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      
+          <h1><a href="/">post</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://billsbestblog.netlify.com">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:https://billsbestblog.netlify.com">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/"><p>Data Visualization Using a Time Series</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/"><p>Data Visualization Using a Bar Chart</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-time-series%2f&text=Data%20Visualization%20Using%20a%20Time%20Series&via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-time-series%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-time-series%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-time-series%2f&title=Data%20Visualization%20Using%20a%20Time%20Series" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-time-series%2f&title=Data%20Visualization%20Using%20a%20Time%20Series" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-time-series%2f&title=Data%20Visualization%20Using%20a%20Time%20Series" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Bill%20Fisher&body=https%3a%2f%2fbillsbestblog.netlify.com%2fpost%2fdata-visualization-using-a-time-series%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/">Data Visualization Using a Time Series</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2017-09-27'>
+            September 27, 2017</time>
+        <span class="author">Bill Fisher</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    
+
+    
+
+    <div id="content">
+        <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/d3/d3.min.js"></script>
+<script src="/rmarkdown-libs/d3-lasso/d3-lasso.min.js"></script>
+<link href="/rmarkdown-libs/ggiraph/styles.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/ggiraph-binding/ggiraph.js"></script>
+<script src="/rmarkdown-libs/uidc26177f4a3ab11e790351184c04f40e4/scripts_uidc26177f4a3ab11e790351184c04f40e4.js"></script>
+
+
+<p>Today we will go over how to use a time series. We will show Babe Ruth’s homerun progression throughout his playing career. First, we must install the necessary packages and load them with “library()”.</p>
+<pre class="r"><code>library(Lahman)
+library(dplyr)
+library(ggiraph)
+library(ggplot2)</code></pre>
+<p>Next, we need to extract our necessary data from “Lahman”. We will do this with the following code:</p>
+<pre class="r"><code>Batting%&gt;%
+  filter(playerID==&quot;ruthba01&quot;)%&gt;%
+  select(yearID, HR)</code></pre>
+<pre><code>##    yearID HR
+## 1    1914  0
+## 2    1915  4
+## 3    1916  3
+## 4    1917  2
+## 5    1918 11
+## 6    1919 29
+## 7    1920 54
+## 8    1921 59
+## 9    1922 35
+## 10   1923 41
+## 11   1924 46
+## 12   1925 25
+## 13   1926 47
+## 14   1927 60
+## 15   1928 54
+## 16   1929 46
+## 17   1930 49
+## 18   1931 46
+## 19   1932 41
+## 20   1933 34
+## 21   1934 22
+## 22   1935  6</code></pre>
+<p>We can then call this dataframe “df” to make it easy to call upon moving forward.</p>
+<pre class="r"><code>df&lt;-Batting%&gt;%
+  filter(playerID==&quot;ruthba01&quot;)%&gt;%
+  select(yearID, HR)
+
+df</code></pre>
+<pre><code>##    yearID HR
+## 1    1914  0
+## 2    1915  4
+## 3    1916  3
+## 4    1917  2
+## 5    1918 11
+## 6    1919 29
+## 7    1920 54
+## 8    1921 59
+## 9    1922 35
+## 10   1923 41
+## 11   1924 46
+## 12   1925 25
+## 13   1926 47
+## 14   1927 60
+## 15   1928 54
+## 16   1929 46
+## 17   1930 49
+## 18   1931 46
+## 19   1932 41
+## 20   1933 34
+## 21   1934 22
+## 22   1935  6</code></pre>
+<p>Next, we will construct our graph. Using “ggplot”, create a line chart with the following code:</p>
+<pre class="r"><code>ggplot()+
+  geom_line(data=df,aes(x=yearID,y=HR))</code></pre>
+<p><img src="/post/2017-09-27-data-visualization-using-a-time-series_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>This gives us a simple line chart. Now lets add some points to it.</p>
+<pre class="r"><code>ggplot()+
+  geom_line(data=df,aes(x=yearID,y=HR))+
+  geom_point(data=df,aes(x=yearID,y=HR))</code></pre>
+<p><img src="/post/2017-09-27-data-visualization-using-a-time-series_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Now we can see when Babe Ruth hit his homeruns but it might help the user if we made this plot interactive. To do this, we will use ggiraph and make it so that when we hover over a particular point, you will see the number of homeruns for that year.</p>
+<pre class="r"><code>g&lt;-ggplot()+
+  geom_line(data=df,aes(x=yearID,y=HR))+
+  geom_point_interactive(data=df,aes(x=yearID,y=HR,tooltip=HR,data_id=yearID))+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Homeruns&quot;)+
+  ggtitle(&quot;Babe Ruth&#39;s Homeruns&quot;)
+
+
+ggiraph(code=print(g),hover_css=&quot;fill:white;stroke:red&quot;)</code></pre>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="ggiraph html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"html":"<div id='uidc26177f4a3ab11e790351184c04f40e4' class='ggiraph-container' ><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"svg_1\" viewBox=\"0 0 432.00 432.00\" class=\"svg-responsive-container\">\n  <g>\n    <defs>\n      <clipPath id=\"cl1_0\">\n        <rect x=\"0.00\" y=\"432.00\" width=\"0.00\" height=\"0.00\"/>\n      <\/clipPath>\n    <\/defs>\n    <rect x=\"0.00\" y=\"0.00\" width=\"432.00\" height=\"432.00\" id=\"1\" clip-path=\"url(#cl1_0)\" fill=\"#FFFFFF\" fill-opacity=\"1\" stroke-width=\"0.75\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <defs>\n      <clipPath id=\"cl1_1\">\n        <rect x=\"0.00\" y=\"0.00\" width=\"432.00\" height=\"432.00\"/>\n      <\/clipPath>\n    <\/defs>\n    <rect x=\"0.00\" y=\"0.00\" width=\"432.00\" height=\"432.00\" id=\"2\" clip-path=\"url(#cl1_1)\" fill=\"#FFFFFF\" fill-opacity=\"1\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <defs>\n      <clipPath id=\"cl1_2\">\n        <rect x=\"33.92\" y=\"21.51\" width=\"392.60\" height=\"380.15\"/>\n      <\/clipPath>\n    <\/defs>\n    <rect x=\"33.92\" y=\"21.51\" width=\"392.60\" height=\"380.15\" id=\"3\" clip-path=\"url(#cl1_2)\" fill=\"#EBEBEB\" fill-opacity=\"1\" stroke=\"none\"/>\n    <polyline points=\"33.92,326.78 426.52,326.78\" id=\"4\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"0.533489\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"33.92,211.58 426.52,211.58\" id=\"5\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"0.533489\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"33.92,96.39 426.52,96.39\" id=\"6\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"0.533489\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"111.25,401.66 111.25,21.51\" id=\"7\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"0.533489\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"196.23,401.66 196.23,21.51\" id=\"8\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"0.533489\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"281.21,401.66 281.21,21.51\" id=\"9\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"0.533489\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"366.19,401.66 366.19,21.51\" id=\"10\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"0.533489\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"33.92,384.38 426.52,384.38\" id=\"11\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"33.92,269.18 426.52,269.18\" id=\"12\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"33.92,153.98 426.52,153.98\" id=\"13\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"33.92,38.79 426.52,38.79\" id=\"14\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"68.76,401.66 68.76,21.51\" id=\"15\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"153.74,401.66 153.74,21.51\" id=\"16\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"238.72,401.66 238.72,21.51\" id=\"17\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"323.70,401.66 323.70,21.51\" id=\"18\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"408.67,401.66 408.67,21.51\" id=\"19\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#FFFFFF\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"51.76,384.38 68.76,361.34 85.75,367.10 102.75,372.86 119.75,321.02 136.74,217.34 153.74,73.35 170.73,44.55 187.73,182.78 204.72,148.22 221.72,119.42 238.72,240.38 255.71,113.67 272.71,38.79 289.70,73.35 306.70,119.42 323.70,102.15 340.69,119.42 357.69,148.22 374.68,188.54 391.68,257.66 408.67,349.82\" id=\"20\" clip-path=\"url(#cl1_2)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <circle cx=\"51.76\" cy=\"384.38\" r=\"1.47pt\" id=\"21\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"68.76\" cy=\"361.34\" r=\"1.47pt\" id=\"22\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"85.75\" cy=\"367.10\" r=\"1.47pt\" id=\"23\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"102.75\" cy=\"372.86\" r=\"1.47pt\" id=\"24\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"119.75\" cy=\"321.02\" r=\"1.47pt\" id=\"25\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"136.74\" cy=\"217.34\" r=\"1.47pt\" id=\"26\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"153.74\" cy=\"73.35\" r=\"1.47pt\" id=\"27\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"170.73\" cy=\"44.55\" r=\"1.47pt\" id=\"28\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"187.73\" cy=\"182.78\" r=\"1.47pt\" id=\"29\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"204.72\" cy=\"148.22\" r=\"1.47pt\" id=\"30\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"221.72\" cy=\"119.42\" r=\"1.47pt\" id=\"31\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"238.72\" cy=\"240.38\" r=\"1.47pt\" id=\"32\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"255.71\" cy=\"113.67\" r=\"1.47pt\" id=\"33\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"272.71\" cy=\"38.79\" r=\"1.47pt\" id=\"34\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"289.70\" cy=\"73.35\" r=\"1.47pt\" id=\"35\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"306.70\" cy=\"119.42\" r=\"1.47pt\" id=\"36\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"323.70\" cy=\"102.15\" r=\"1.47pt\" id=\"37\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"340.69\" cy=\"119.42\" r=\"1.47pt\" id=\"38\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"357.69\" cy=\"148.22\" r=\"1.47pt\" id=\"39\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"374.68\" cy=\"188.54\" r=\"1.47pt\" id=\"40\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"391.68\" cy=\"257.66\" r=\"1.47pt\" id=\"41\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <circle cx=\"408.67\" cy=\"349.82\" r=\"1.47pt\" id=\"42\" clip-path=\"url(#cl1_2)\" fill=\"#000000\" fill-opacity=\"1\" stroke-width=\"0.708661\" stroke=\"#000000\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n    <defs>\n      <clipPath id=\"cl1_3\">\n        <rect x=\"0.00\" y=\"0.00\" width=\"432.00\" height=\"432.00\"/>\n      <\/clipPath>\n    <\/defs>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"23.98\" y=\"387.60\" id=\"43\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">0<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"18.97\" y=\"272.40\" id=\"44\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">20<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"18.97\" y=\"157.20\" id=\"45\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">40<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"18.97\" y=\"42.01\" id=\"46\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">60<\/text>\n    <\/g>\n    <polyline points=\"31.18,384.38 33.92,384.38\" id=\"47\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"31.18,269.18 33.92,269.18\" id=\"48\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"31.18,153.98 33.92,153.98\" id=\"49\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"31.18,38.79 33.92,38.79\" id=\"50\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"68.76,404.40 68.76,401.66\" id=\"51\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"153.74,404.40 153.74,401.66\" id=\"52\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"238.72,404.40 238.72,401.66\" id=\"53\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"323.70,404.40 323.70,401.66\" id=\"54\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <polyline points=\"408.67,404.40 408.67,401.66\" id=\"55\" clip-path=\"url(#cl1_3)\" fill=\"none\" stroke-width=\"1.06698\" stroke=\"#333333\" stroke-opacity=\"1\" stroke-linejoin=\"round\" stroke-linecap=\"butt\"/>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"58.75\" y=\"413.03\" id=\"56\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">1915<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"143.73\" y=\"413.03\" id=\"57\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">1920<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"228.71\" y=\"413.03\" id=\"58\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">1925<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"313.69\" y=\"413.03\" id=\"59\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">1930<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"398.66\" y=\"413.03\" id=\"60\" font-size=\"6.60pt\" fill=\"#4D4D4D\" fill-opacity=\"1\" font-family=\"Arial\">1935<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"218.60\" y=\"426.38\" id=\"61\" font-size=\"8.25pt\" font-family=\"Arial\">Year<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text transform=\"translate(13.35,236.95) rotate(-90)\" id=\"62\" font-size=\"8.25pt\" font-family=\"Arial\">Homeruns<\/text>\n    <\/g>\n    <g clip-path=\"url(#cl1_3)\">\n      <text x=\"33.92\" y=\"14.79\" id=\"63\" font-size=\"9.90pt\" font-family=\"Arial\">Babe Ruth's Homeruns<\/text>\n    <\/g>\n  <\/g>\n<\/svg>\n<div class='ggiraph-toolbar'><div class='ggiraph-toolbar-block shinyonly'><a class='ggiraph-toolbar-icon neutral' title='lasso selection' href='javascript:lasso_on(\"uidc26177f4a3ab11e790351184c04f40e4\", true, \"array_selected_uidc26177f4a3ab11e790351184c04f40e4\", \"clicked_uidc26177f4a3ab11e790351184c04f40e4\");'><svg width='1.5em' height='1.5em' viewBox='0 0 230 230'><g><ellipse ry='65.5' rx='86.5' cy='94' cx='115.5' stroke-width='20' fill='transparent'/><ellipse ry='11.500001' rx='10.5' cy='153' cx='91.5' stroke-width='20' fill='transparent'/><line y2='210.5' x2='105' y1='164.5' x1='96' stroke-width='20'/><\/g><\/svg><\/a><a class='ggiraph-toolbar-icon drop' title='lasso anti-selection' href='javascript:lasso_on(\"uidc26177f4a3ab11e790351184c04f40e4\", false, \"array_selected_uidc26177f4a3ab11e790351184c04f40e4\", \"clicked_uidc26177f4a3ab11e790351184c04f40e4\");'><svg width='1.5em' height='1.5em' viewBox='0 0 230 230'><g><ellipse ry='65.5' rx='86.5' cy='94' cx='115.5' stroke-width='20' fill='transparent'/><ellipse ry='11.500001' rx='10.5' cy='153' cx='91.5' stroke-width='20' fill='transparent'/><line y2='210.5' x2='105' y1='164.5' x1='96' stroke-width='20'/><\/g><\/svg><\/a><\/div><\/div><style>div.tooltip_uidc26177f4a3ab11e790351184c04f40e4 {position:absolute;pointer-events:none;z-index:999;padding:5px;background:black;color:white;border-radius:2px 2px 2px 2px;}\n.cl_data_id_uidc26177f4a3ab11e790351184c04f40e4:{}.cl_data_id_uidc26177f4a3ab11e790351184c04f40e4:hover{fill:white;stroke:red}\n.clicked_uidc26177f4a3ab11e790351184c04f40e4{fill:white;stroke:red}<\/style><\/div>","uid":"uidc26177f4a3ab11e790351184c04f40e4","funname":"init_prop_uidc26177f4a3ab11e790351184c04f40e4","sel_array_name":"array_selected_uidc26177f4a3ab11e790351184c04f40e4","selected_class":"clicked_uidc26177f4a3ab11e790351184c04f40e4","tooltip_opacity":0.9,"tooltip_offx":10,"tooltip_offy":0,"zoom_max":1,"use_wh":false,"width":"80%","selection_type":"multiple","flexdashboard":false},"evals":[],"jsHooks":[]}</script>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/data-science'>data science</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/"
+                class="button big previous">Data Visualization Using a Bar Chart</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="/" class="logo"><img src="/img/main/logo.jpg" alt="Hugo Future Imperfect" /></a>
+                
+            
+            
+                <header>
+                    <h2>Bill&#39;s Data Science Blog</h2>
+                    <p>A blog about various data science topics, including, R, R markdown, dplyr, ggiraph, ggplot and much more!</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/billiam527" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/">Data Visualization Using a Time Series</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-09-27'>
+                                    September 27, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">Data Visualization Using a Bar Chart</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-09-25'>
+                                    September 25, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                "/post/"
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ggiraph/">ggiraph</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ggplot/">ggplot</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/lahman/">Lahman</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dplyr/">dplyr</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bar-chart/">bar chart</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/data-science/">data science</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/billiam527" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; 2017 Bill&#39;s Data Science Blog. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+      </div>
+      <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+      
+
+      
+        
+      
+
+      
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/backToTop.js"></script>
+      
+
+      
+
+      
+      <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
+

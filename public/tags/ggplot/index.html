@@ -1,0 +1,634 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            <title>Ggplot - Bill&#39;s Data Science Blog</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.29" />
+        
+
+
+        
+        
+            
+        
+
+        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ggplot"/>
+<meta name="twitter:description" content=""/>
+
+        <meta property="og:title" content="Ggplot" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://billsbestblog.netlify.com/tags/ggplot/" />
+
+
+
+<meta property="og:updated_time" content="2017-09-27T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Ggplot">
+<meta itemprop="description" content="">
+
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+        
+
+        
+
+        
+            
+        
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      
+          <h1><a href="/"></a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://billsbestblog.netlify.com">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:https://billsbestblog.netlify.com">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/"><p>Data Visualization Using a Time Series</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/"><p>Data Visualization Using a Bar Chart</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/">Data Visualization Using a Time Series</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2017-09-27'>
+            September 27, 2017</time>
+        <span class="author">Bill Fisher</span>
+        
+            <p>3 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p><p>Today we will go over how to use a time series. We will show Babe Ruth’s homerun progression throughout his playing career. First, we must install the necessary packages and load them with “library()”.
+library(Lahman)
+library(dplyr)
+library(ggiraph)
+library(ggplot2)
+Next, we need to extract our necessary data from “Lahman”. We will do this with the following code:
+Batting%&gt;%
+filter(playerID==&quot;ruthba01&quot;)%&gt;%
+select(yearID, HR)</p>
+
+<h2 id="yearid-hr">yearID HR</h2>
+
+<h2 id="1-1914-0">1 1914 0</h2>
+
+<h2 id="2-1915-4">2 1915 4</h2>
+
+<h2 id="3-1916-3">3 1916 3</h2>
+
+<h2 id="4-1917-2">4 1917 2</h2>
+
+<h2 id="5-1918-11">5 1918 11</h2>
+
+<h2 id="6-1919-29">6 1919 29</h2>
+
+<h2 id="7-1920-54">7 1920 54</h2>
+
+<h2 id="8-1921-59">8 1921 59</h2>
+
+<h2 id="9-1922-35">9 1922 35</h2>
+
+<h2 id="10-1923-41">10 1923 41</h2>
+
+<h2 id="11-1924-46">11 1924 46</h2>
+
+<h2 id="12-1925-25">12 1925 25</h2>
+
+<h2 id="13-1926-47">13 1926 47</h2>
+
+<h2 id="14-1927-60">14 1927 60</h2>
+
+<h2 id="15-1928-54">15 1928 54</h2>
+
+<h2 id="16-1929-46">16 1929 46</h2>
+
+<h2 id="17-1930-49">17 1930 49</h2>
+
+<h2 id="18-1931-46">18 1931 46</h2>
+
+<h2 id="19-1932-41">19 1932 41</h2>
+
+<h2 id="20-1933-34">20 1933 34</h2>
+
+<h2 id="21-1934-22">21 1934 22</h2>
+
+<h2 id="22-1935-6">22 1935 6</h2>
+
+<p>We can then call this dataframe “df” to make it easy to call upon moving forward.</p>
+</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/data-science'>data science</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+
+        
+<ul class="actions pagination">
+    
+        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+    
+
+    
+        <li><a href="#" class="disabled button big next">Next Page</a></li>
+    
+</ul>
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="/" class="logo"><img src="/img/main/logo.jpg" alt="Hugo Future Imperfect" /></a>
+                
+            
+            
+                <header>
+                    <h2>Bill&#39;s Data Science Blog</h2>
+                    <p>A blog about various data science topics, including, R, R markdown, dplyr, ggiraph, ggplot and much more!</p>
+                </header>
+            
+            <ul class="icons">
+                
+                    <li><a href="https://billsbestblog.netlify.com/tags/ggplot/index.xml" type="application/rss+xml"
+                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
+                
+                
+                    
+<li><a href="//github.com/billiam527" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/">Data Visualization Using a Time Series</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-09-27'>
+                                    September 27, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">Data Visualization Using a Bar Chart</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-09-25'>
+                                    September 25, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                "/post/"
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ggiraph/">ggiraph</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/ggplot/">ggplot</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/lahman/">Lahman</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/dplyr/">dplyr</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/bar-chart/">bar chart</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/data-science/">data science</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                    <li><a href="https://billsbestblog.netlify.com/tags/ggplot/index.xml" type="application/rss+xml"
+                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
+                
+                
+                    
+<li><a href="//github.com/billiam527" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; 2017 Bill&#39;s Data Science Blog. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+      </div>
+      <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+      
+
+      
+        
+      
+
+      
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/backToTop.js"></script>
+      
+
+      
+
+      
+      <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
+

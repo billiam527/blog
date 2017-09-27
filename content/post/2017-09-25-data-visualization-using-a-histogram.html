@@ -23,7 +23,7 @@ library(ggplot2)</code></pre>
 <pre class="r"><code>df&lt;-Master%&gt;%
   filter(!is.na(weight))%&gt;%
   select(weight)</code></pre>
-<p>Now, we can graph this information using ggplot and ggiraph. To make our histogram more appealing we will set the outside color of our bars to white and fill them with blue. Make sure to use geom_histogram to make a histogram and use data = df since that is what we already named our table. You can also pick a precise number of bars for the histogram using “bins”. For our example, we will use 25.</p>
+<p>Now, we can graph this information using ggplot. To make our histogram more appealing we will set the outside color of our bars to white and fill them with blue. Make sure to use geom_histogram to make a histogram and use data = df since that is what we already named our table. You can also pick a precise number of bars for the histogram using “bins”. For our example, we will use 25.</p>
 <pre class="r"><code>ggplot()+
   geom_histogram(data=df,aes(x=weight),color=&quot;white&quot;,fill=&quot;blue&quot;,bins=25)+
   ggtitle(&quot;Baseball Player Weights&quot;)</code></pre>

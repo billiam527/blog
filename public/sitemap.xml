@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/</loc>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
   </url>
@@ -28,8 +33,14 @@
   </url>
   
   <url>
+    <loc>https://billsbestblog.netlify.com/tags/baseball/</loc>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://billsbestblog.netlify.com/</loc>
-    <lastmod>2017-09-25T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -46,8 +57,20 @@
   </url>
   
   <url>
+    <loc>https://billsbestblog.netlify.com/categories/data-science/</loc>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://billsbestblog.netlify.com/categories/dplyr/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://billsbestblog.netlify.com/tags/ggiraph/</loc>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -58,8 +81,20 @@
   </url>
   
   <url>
+    <loc>https://billsbestblog.netlify.com/tags/ggplot/</loc>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://billsbestblog.netlify.com/categories/ggplot/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://billsbestblog.netlify.com/tags/lahman/</loc>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -70,14 +105,26 @@
   </url>
   
   <url>
+    <loc>https://billsbestblog.netlify.com/tags/line-chart/</loc>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://billsbestblog.netlify.com/post/</loc>
-    <lastmod>2017-09-25T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://billsbestblog.netlify.com/tags/</loc>
-    <lastmod>2017-09-25T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://billsbestblog.netlify.com/tags/time-series/</loc>
+    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

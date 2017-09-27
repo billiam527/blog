@@ -1,0 +1,70 @@
+---
+title: Data Visualization Using a Time Series
+author: Bill Fisher
+date: '2017-09-27'
+slug: data-visualization-using-a-time-series
+categories:
+  - data science
+tags:
+  - ggplot
+  - ggiraph
+  - line chart
+  - time series
+  - baseball
+  - Lahman
+---
+
+Today we will go over how to use a time series.  We will show Babe Ruth's homerun progression throughout his playing career. First, we must install the necessary packages and load them with "library()".
+
+```{r message=FALSE,warning=FALSE}
+library(Lahman)
+library(dplyr)
+library(ggiraph)
+library(ggplot2)
+```
+
+Next, we need to extract our necessary data from "Lahman".  We will do this with the following code:
+
+```{r message=FALSE,warning=FALSE}
+Batting%>%
+  filter(playerID=="ruthba01")%>%
+  select(yearID, HR)
+```
+
+We can then call this dataframe "df" to make it easy to call upon moving forward.
+```{r message=FALSE,warning=FALSE}
+df<-Batting%>%
+  filter(playerID=="ruthba01")%>%
+  select(yearID, HR)
+
+df
+```
+
+Next, we will construct our graph. Using "ggplot", create a line chart with the following code:
+
+```{r message=FALSE,warning=FALSE}
+ggplot()+
+  geom_line(data=df,aes(x=yearID,y=HR))
+```
+
+This gives us a simple line chart.  Now lets add some points to it.
+
+```{r message=FALSE,warning=FALSE}
+ggplot()+
+  geom_line(data=df,aes(x=yearID,y=HR))+
+  geom_point(data=df,aes(x=yearID,y=HR))
+```
+
+Now we can see when Babe Ruth hit his homeruns but it might help the user if we made this plot interactive. To do this, we will use ggiraph and make it so that when we hover over a particular point, you will see the number of homeruns for that year.
+
+```{r message=FALSE,warning=FALSE}
+g<-ggplot()+
+  geom_line(data=df,aes(x=yearID,y=HR))+
+  geom_point_interactive(data=df,aes(x=yearID,y=HR,tooltip=HR,data_id=yearID))+
+  xlab("Year")+
+  ylab("Homeruns")+
+  ggtitle("Babe Ruth's Homeruns")
+
+
+ggiraph(code=print(g),hover_css="fill:white;stroke:red")
+```

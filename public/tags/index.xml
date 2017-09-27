@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Bill&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://billsbestblog.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Baseball</title>
+      <link>https://billsbestblog.netlify.com/tags/baseball/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/tags/baseball/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Data sceince</title>
@@ -17,6 +26,51 @@
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://billsbestblog.netlify.com/tags/data-sceince/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ggiraph</title>
+      <link>https://billsbestblog.netlify.com/tags/ggiraph/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/tags/ggiraph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ggplot</title>
+      <link>https://billsbestblog.netlify.com/tags/ggplot/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/tags/ggplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lahman</title>
+      <link>https://billsbestblog.netlify.com/tags/lahman/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/tags/lahman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Line chart</title>
+      <link>https://billsbestblog.netlify.com/tags/line-chart/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/tags/line-chart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time series</title>
+      <link>https://billsbestblog.netlify.com/tags/time-series/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/tags/time-series/</guid>
       <description></description>
     </item>
     

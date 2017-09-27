@@ -30,7 +30,7 @@ df<-Master%>%
   select(weight)
 ```
 
-Now, we can graph this information using ggplot and ggiraph.  To make our histogram more appealing we will set the outside color of our bars to white and fill them with blue.  Make sure to use geom_histogram to make a histogram and use data = df since that is what we already named our table.  You can also pick a precise number of bars for the histogram using "bins".  For our example, we will use 25.
+Now, we can graph this information using ggplot.  To make our histogram more appealing we will set the outside color of our bars to white and fill them with blue.  Make sure to use geom_histogram to make a histogram and use data = df since that is what we already named our table.  You can also pick a precise number of bars for the histogram using "bins".  For our example, we will use 25.
 
 ```{r message=FALSE,warning=FALSE}
 ggplot()+

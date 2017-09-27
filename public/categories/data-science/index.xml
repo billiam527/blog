@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data science on Bill&#39;s Data Science Blog</title>
+    <link>https://billsbestblog.netlify.com/categories/data-science/</link>
+    <description>Recent content in Data science on Bill&#39;s Data Science Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://billsbestblog.netlify.com/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Visualization Using a Time Series</title>
+      <link>https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/</guid>
+      <description>Today we will go over how to use a time series. We will show Babe Ruth’s homerun progression throughout his playing career. First, we must install the necessary packages and load them with “library()”.
+library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we need to extract our necessary data from “Lahman”. We will do this with the following code:
+Batting%&amp;gt;%filter(playerID==&amp;quot;ruthba01&amp;quot;)%&amp;gt;%select(yearID, HR)## yearID HR## 1 1914 0## 2 1915 4## 3 1916 3## 4 1917 2## 5 1918 11## 6 1919 29## 7 1920 54## 8 1921 59## 9 1922 35## 10 1923 41## 11 1924 46## 12 1925 25## 13 1926 47## 14 1927 60## 15 1928 54## 16 1929 46## 17 1930 49## 18 1931 46## 19 1932 41## 20 1933 34## 21 1934 22## 22 1935 6We can then call this dataframe “df” to make it easy to call upon moving forward.</description>
+    </item>
+    
+  </channel>
+</rss>
