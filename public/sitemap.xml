@@ -3,128 +3,139 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/</loc>
+    <loc>/post/creating-a-dashboard-to-display-visualizations/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/data-visualization-using-a-time-series/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/</loc>
+    <loc>/post/data-visualization-using-a-bar-chart/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/post/data-visualization-using-a-histogram/</loc>
+    <loc>/post/data-visualization-using-a-histogram/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/post/data-visualization-using-a-scatter-plot/</loc>
+    <loc>/post/data-visualization-using-a-scatter-plot/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/about/</loc>
+    <loc>/about/</loc>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/categories/bar-chart/</loc>
-    <lastmod>2017-09-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/tags/baseball/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/categories/</loc>
+    <loc>/categories/bar-chart/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/tags/data-sceince/</loc>
+    <loc>/tags/baseball/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/categories/data-science/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://billsbestblog.netlify.com/categories/dplyr/</loc>
+    <loc>/tags/data-sceince/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/tags/ggiraph/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <loc>/categories/data-science/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/categories/ggiraph/</loc>
+    <loc>/categories/dplyr/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/tags/ggplot/</loc>
+    <loc>/tags/ggiraph/</loc>
     <lastmod>2017-09-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/categories/ggplot/</loc>
+    <loc>/categories/ggiraph/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/tags/lahman/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <loc>/tags/ggplot/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/categories/lahman/</loc>
+    <loc>/categories/ggplot/</loc>
     <lastmod>2017-09-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/tags/line-chart/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <loc>/tags/histogram/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/post/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <loc>/tags/lahman/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/tags/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <loc>/categories/lahman/</loc>
+    <lastmod>2017-09-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://billsbestblog.netlify.com/tags/time-series/</loc>
-    <lastmod>2017-09-27T00:00:00+00:00</lastmod>
+    <loc>/tags/line-chart/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/time-series/</loc>
+    <lastmod>2017-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

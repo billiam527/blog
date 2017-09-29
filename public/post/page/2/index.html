@@ -31,7 +31,7 @@
         <meta property="og:title" content="Post" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://billsbestblog.netlify.com/post/" />
+<meta property="og:url" content="/post/" />
 
 
 
@@ -116,7 +116,7 @@
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://billsbestblog.netlify.com">
+                    <input type="hidden" name="as_sitesearch" value="/">
                 </form>
             </li>
             <li class="menu">
@@ -133,7 +133,7 @@
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="q" value="site:https://billsbestblog.netlify.com">
+                <input type="hidden" name="q" value="site:/">
             </form>
         </section>
 
@@ -180,11 +180,11 @@
 
                 
                     <li>
-                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/"><p>Data Visualization Using a Time Series</p></a>
+                        <a href="/post/creating-a-dashboard-to-display-visualizations/"><p>Creating a Dashboard to Display Visualizations</p></a>
                     </li>
                 
                     <li>
-                        <a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/"><p>Data Visualization Using a Bar Chart</p></a>
+                        <a href="/post/data-visualization-using-a-time-series/"><p>Data Visualization Using a Time Series</p></a>
                     </li>
                 
             </ul>
@@ -202,7 +202,76 @@
     <header>
     <div class="title">
         
-            <h2><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-scatter-plot/">Data Visualization Using a Scatter Plot</a></h2>
+            <h2><a href="/post/data-visualization-using-a-histogram/">Data Visualization Using a Histogram</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2017-09-25'>
+            September 25, 2017</time>
+        <span class="author">Bill Fisher</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Let us say we wanted to graph the weight of all baseball players to ever play. A nice display of this information could be in a histogram.
+First, we need to install the necessary packages and call them in using “library()”.
+library(Lahman)
+library(dplyr)
+library(ggiraph)
+library(ggplot2)
+Next, we can use our select function to select the players’s weights, in the “Master” table. We can also make sure that we exclude any players that we do not have data available for.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="/post/data-visualization-using-a-histogram/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/ggiraph'>ggiraph</a></li>
+    
+        <li><a href='/categories/ggplot'>ggplot</a></li>
+    
+        <li><a href='/categories/lahman'>Lahman</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="/post/data-visualization-using-a-scatter-plot/">Data Visualization Using a Scatter Plot</a></h2>
         
         
     </div>
@@ -232,7 +301,7 @@ Now, we must filter and summarize hitters that were able to hit 400 homeruns in 
 
     <footer>
         <ul class="actions">
-            <li><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-scatter-plot/" class="button big">Continue Reading</a></li>
+            <li><a href="/post/data-visualization-using-a-scatter-plot/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -300,7 +369,7 @@ Now, we must filter and summarize hitters that were able to hit 400 homeruns in 
             
             <ul class="icons">
                 
-                    <li><a href="https://billsbestblog.netlify.com/post/index.xml" type="application/rss+xml"
+                    <li><a href="/post/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 
@@ -378,11 +447,11 @@ Now, we must filter and summarize hitters that were able to hit 400 homeruns in 
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-time-series/">Data Visualization Using a Time Series</a></h3>
+                                <h3><a href="/post/creating-a-dashboard-to-display-visualizations/">Creating a Dashboard to Display Visualizations</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2017-09-27'>
-                                    September 27, 2017</time>
+                                    '2017-09-29'>
+                                    September 29, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -390,11 +459,11 @@ Now, we must filter and summarize hitters that were able to hit 400 homeruns in 
                     <li>
                         <article>
                             <header>
-                                <h3><a href="https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/">Data Visualization Using a Bar Chart</a></h3>
+                                <h3><a href="/post/data-visualization-using-a-time-series/">Data Visualization Using a Time Series</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2017-09-25'>
-                                    September 25, 2017</time>
+                                    '2017-09-27'>
+                                    September 27, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -459,6 +528,15 @@ Now, we must filter and summarize hitters that were able to hit 400 homeruns in 
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/data-science/">data science</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/dplyr/">dplyr</a>
                                 <span style="float:right;">2</span>
                             </header>
@@ -469,15 +547,6 @@ Now, we must filter and summarize hitters that were able to hit 400 homeruns in 
                         <article>
                             <header>
                                 <a href="/categories/bar-chart/">bar chart</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/data-science/">data science</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -494,7 +563,7 @@ Now, we must filter and summarize hitters that were able to hit 400 homeruns in 
         <section id="footer">
             <ul class="icons">
                 
-                    <li><a href="https://billsbestblog.netlify.com/post/index.xml" type="application/rss+xml"
+                    <li><a href="/post/index.xml" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 
                 

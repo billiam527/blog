@@ -1,0 +1,56 @@
+---
+title: Creating a Dashboard to Display Visualizations
+author: ''
+date: '2017-09-29'
+slug: creating-a-dashboard-to-display-visualizations
+categories:
+  - data science
+tags: 
+  - ggplot
+  - line chart
+  - time series
+  - baseball
+  - Lahman
+  - histogram
+---
+
+Today we will look at how to create a dashboard.  In previous posts we went over how to extract and display data.  Please see Data Visualization Using a Histogram, Data Visualization Using a Time Series, and Data Visualization Using a Scatter Plot for more detailed posts on their respective topics.
+
+The code we will need to use today is as follows:
+
+```{r message=FALSE,warning=FALSE}
+library(flexdashboard)
+library(Lahman)
+library(dplyr)
+library(ggplot2)
+
+result<-Batting%>%
+  filter(playerID=="ruthba01")%>%
+  select(yearID,SO,HR)
+
+#Scatter plot-------------------------------
+
+ggplot()+
+  geom_point(data=result,aes(x=SO,y=HR))+
+  xlab("Strikeouts")+
+  ylab("Homeruns")
+
+
+#Histogram----------------------------------
+
+ggplot()+
+  geom_histogram(data=result,aes(x=HR), bins=5, color="blue", fill="white")+
+  xlab("Homeruns")
+
+#Time Series------------------------------------------------------------------
+
+ggplot()+
+  geom_point(data=result,aes(x=yearID,y=HR))+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  xlab("Year")+
+  ylab("Homeruns")
+```
+
+We will load this code into an R markdown file and use a Flex Dashboard format.  Using the flexdashboard we can manipulate titles, change our orientation from columns to rows and vice versa, and rearrange the size of our visualizations using the heights and widths among other possibilities.
+
+To view a completed flex dashboard, please visit: https://billiam527.github.io/BabeRuth/

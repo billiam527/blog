@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bar chart on Bill&#39;s Data Science Blog</title>
-    <link>https://billsbestblog.netlify.com/categories/bar-chart/</link>
+    <link>/categories/bar-chart/</link>
     <description>Recent content in Bar chart on Bill&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://billsbestblog.netlify.com/categories/bar-chart/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/bar-chart/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Visualization Using a Bar Chart</title>
-      <link>https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/</link>
+      <link>/post/data-visualization-using-a-bar-chart/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/</guid>
+      <guid>/post/data-visualization-using-a-bar-chart/</guid>
       <description>Let’s graph homeruns from the year 1980.
 First, we need to bring in our downloaded pacakges using the library feature.
 library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we need to extract the data we want to display from Lahman. During this step, we will also arrange our data ahead of time so that when we finally put our bar chart together, the homeruns will display from most to least.</description>

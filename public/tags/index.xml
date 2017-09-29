@@ -2,75 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Bill&#39;s Data Science Blog</title>
-    <link>https://billsbestblog.netlify.com/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Bill&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://billsbestblog.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Baseball</title>
-      <link>https://billsbestblog.netlify.com/tags/baseball/</link>
-      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      <link>/tags/baseball/</link>
+      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/tags/baseball/</guid>
+      <guid>/tags/baseball/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data sceince</title>
-      <link>https://billsbestblog.netlify.com/tags/data-sceince/</link>
+      <link>/tags/data-sceince/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/tags/data-sceince/</guid>
+      <guid>/tags/data-sceince/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggiraph</title>
-      <link>https://billsbestblog.netlify.com/tags/ggiraph/</link>
+      <link>/tags/ggiraph/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/tags/ggiraph/</guid>
+      <guid>/tags/ggiraph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggplot</title>
-      <link>https://billsbestblog.netlify.com/tags/ggplot/</link>
-      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      <link>/tags/ggplot/</link>
+      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/tags/ggplot/</guid>
+      <guid>/tags/ggplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Histogram</title>
+      <link>/tags/histogram/</link>
+      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/histogram/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lahman</title>
-      <link>https://billsbestblog.netlify.com/tags/lahman/</link>
-      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      <link>/tags/lahman/</link>
+      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/tags/lahman/</guid>
+      <guid>/tags/lahman/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Line chart</title>
-      <link>https://billsbestblog.netlify.com/tags/line-chart/</link>
-      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      <link>/tags/line-chart/</link>
+      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/tags/line-chart/</guid>
+      <guid>/tags/line-chart/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Time series</title>
-      <link>https://billsbestblog.netlify.com/tags/time-series/</link>
-      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      <link>/tags/time-series/</link>
+      <pubDate>Fri, 29 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/tags/time-series/</guid>
+      <guid>/tags/time-series/</guid>
       <description></description>
     </item>
     

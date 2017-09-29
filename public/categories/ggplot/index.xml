@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ggplot on Bill&#39;s Data Science Blog</title>
-    <link>https://billsbestblog.netlify.com/categories/ggplot/</link>
+    <link>/categories/ggplot/</link>
     <description>Recent content in Ggplot on Bill&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://billsbestblog.netlify.com/categories/ggplot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/ggplot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Visualization Using a Bar Chart</title>
-      <link>https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/</link>
+      <link>/post/data-visualization-using-a-bar-chart/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/post/data-visualization-using-a-bar-chart/</guid>
+      <guid>/post/data-visualization-using-a-bar-chart/</guid>
       <description>Let’s graph homeruns from the year 1980.
 First, we need to bring in our downloaded pacakges using the library feature.
 library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we need to extract the data we want to display from Lahman. During this step, we will also arrange our data ahead of time so that when we finally put our bar chart together, the homeruns will display from most to least.</description>
@@ -24,10 +24,10 @@ library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we need t
     
     <item>
       <title>Data Visualization Using a Histogram</title>
-      <link>https://billsbestblog.netlify.com/post/data-visualization-using-a-histogram/</link>
+      <link>/post/data-visualization-using-a-histogram/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/post/data-visualization-using-a-histogram/</guid>
+      <guid>/post/data-visualization-using-a-histogram/</guid>
       <description>Let us say we wanted to graph the weight of all baseball players to ever play. A nice display of this information could be in a histogram.
 First, we need to install the necessary packages and call them in using “library()”.
 library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we can use our select function to select the players’s weights, in the “Master” table. We can also make sure that we exclude any players that we do not have data available for.</description>
@@ -35,10 +35,10 @@ library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Next, we can us
     
     <item>
       <title>Data Visualization Using a Scatter Plot</title>
-      <link>https://billsbestblog.netlify.com/post/data-visualization-using-a-scatter-plot/</link>
+      <link>/post/data-visualization-using-a-scatter-plot/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://billsbestblog.netlify.com/post/data-visualization-using-a-scatter-plot/</guid>
+      <guid>/post/data-visualization-using-a-scatter-plot/</guid>
       <description>Today we are going to go over some basic data visualization techniques using the Lahman dataset, dplyr, ggplot2, and ggiraph. Our goal will be to create a scatter plot that shows elite homerun hitters (that we will define as &amp;gt;= 400 career homeruns) and a comparison of there strikeouts.
 Let’s start by loading the necessary packages.
 library(Lahman)library(dplyr)library(ggiraph)library(ggplot2)Now, we must filter and summarize hitters that were able to hit 400 homeruns in their careers.</description>

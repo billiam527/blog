@@ -1,0 +1,52 @@
+---
+title: Creating a Dashboard to Display Visualizations
+author: ''
+date: '2017-09-29'
+slug: creating-a-dashboard-to-display-visualizations
+categories:
+  - data science
+tags: 
+  - ggplot
+  - line chart
+  - time series
+  - baseball
+  - Lahman
+  - histogram
+---
+
+
+
+<p>Today we will look at how to create a dashboard. In previous posts we went over how to extract and display data. Please see Data Visualization Using a Histogram, Data Visualization Using a Time Series, and Data Visualization Using a Scatter Plot for more detailed posts on their respective topics.</p>
+<p>The code we will need to use today is as follows:</p>
+<pre class="r"><code>library(flexdashboard)
+library(Lahman)
+library(dplyr)
+library(ggplot2)
+
+result&lt;-Batting%&gt;%
+  filter(playerID==&quot;ruthba01&quot;)%&gt;%
+  select(yearID,SO,HR)
+
+#Scatter plot-------------------------------
+
+ggplot()+
+  geom_point(data=result,aes(x=SO,y=HR))+
+  xlab(&quot;Strikeouts&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-09-29-creating-a-dashboard-to-display-visualizations_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>#Histogram----------------------------------
+
+ggplot()+
+  geom_histogram(data=result,aes(x=HR), bins=5, color=&quot;blue&quot;, fill=&quot;white&quot;)+
+  xlab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-09-29-creating-a-dashboard-to-display-visualizations_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<pre class="r"><code>#Time Series------------------------------------------------------------------
+
+ggplot()+
+  geom_point(data=result,aes(x=yearID,y=HR))+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  xlab(&quot;Year&quot;)+
+  ylab(&quot;Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-09-29-creating-a-dashboard-to-display-visualizations_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+<p>We will load this code into an R markdown file and use a Flex Dashboard format. Using the flexdashboard we can manipulate titles, change our orientation from columns to rows and vice versa, and rearrange the size of our visualizations using the heights and widths among other possibilities.</p>
+<p>To view a completed flex dashboard, please visit: <a href="https://billiam527.github.io/BabeRuth/" class="uri">https://billiam527.github.io/BabeRuth/</a></p>
